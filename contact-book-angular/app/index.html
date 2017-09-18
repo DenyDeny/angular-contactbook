@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://use.fontawesome.com/c260649ca8.js"></script>
+    <script src="js/index.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>My angular app</title>
+</head>
+<body ng-controller="firstCtrl">
+    <div class="container">
+        <h1 class="title">Книга контактов</h1>
+        <div class="control-panel">
+            <input class="search-input" type="text" placeholder="Найти контакт" ng-model="searchContact">
+            <button class="btn add-contact" ng-click="toggleModal()">Добавить контакт</button>
+        </div>
+        <table class="contact-table" ng-cloak>
+            <tr>
+                <th>
+                    <a href="#" ng-click="sortType = 'fullname'; sortReverse = !sortReverse">
+                        ФИО <span ng-show="sortType == 'fullname' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'fullname' && sortReverse" class="fa fa-caret-up"></span>
+                    </a>
+                </th>
+                <th>
+                    <a href="#" ng-click="sortType = 'phone'; sortReverse = !sortReverse">
+                        phone <span ng-show="sortType == 'phone' && !sortReverse" class="fa fa-caret-down"></span>
+                              <span ng-show="sortType == 'phone' && sortReverse" class="fa fa-caret-up"></span> 
+                    </a>
+                </th>
+                <th>
+                    <a href="#" ng-click="sortType = 'email'; sortReverse = !sortReverse">
+                        email <span ng-show="sortType == 'email' && !sortReverse" class="fa fa-caret-down"></span>
+                              <span ng-show="sortType == 'email' && sortReverse" class="fa fa-caret-up"></span>  
+                    </a>
+                </th>
+            </tr>
+            <tr ng-repeat="phone in phonebook | orderBy:sortType:sortReverse | filter:searchContact">
+                <td>{{phone.fullname}}</td>
+                <td>{{phone.phone}}</td>
+                <td>{{phone.email}}</td>
+            </tr>
+        </table>
+        <modal-dialog show='modalShown'>
+            <form name="contactForm" class="modalForm">
+                <div class="input-field">
+                    <label for="fullname">ФИО*:</label>
+                    <input id="fullname" name="fullname" type="text" class="validate" ng-model="contact.fullname"/>
+                </div>
+                <div class="input-field">
+                    <label for="phone">Телефон*:</label>
+                    <input id="phone" name="phone"  type="text" class="validate" ng-model="contact.phone"/>
+                </div>
+                <div class="input-field">
+                    <label for="email">email:</label>
+                    <input id="email" name="email" class="validate" type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" ng-model="contact.email"/>
+                </div>
+                <div class="modalForm__btns">
+                    <button type="submit" class="btn addition-btn" ng-click="addContact(contact)">Добавить</button>
+                    <button class="btn cancel-btn" ng-click="toggleModal()">Отмена</button>
+                </div>
+            </form>
+        </modal-dialog>
+
+    </div>
+</body>
+</html>

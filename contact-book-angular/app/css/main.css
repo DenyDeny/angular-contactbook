@@ -1,0 +1,178 @@
+body {
+  font-family: 'Oswald', sans-serif;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.btn,
+.btn.add-contact {
+  padding: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  outline: none;
+  border: 2px solid #000;
+  background-color: #fff;
+}
+.btn:hover,
+.btn.add-contact:hover,
+.btn:focus,
+.btn.add-contact:focus {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+input::-webkit-input-placeholder {
+  color: #000;
+}
+input::-moz-placeholder {
+  color: #000;
+}
+input:-ms-input-placeholder {
+  color: #000;
+}
+input::placeholder {
+  color: #000;
+}
+.contact-table {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+.contact-table tbody {
+  display: block;
+  width: 100%;
+}
+.contact-table tbody tr:nth-of-type(even) {
+  background-color: #f5f5f5;
+}
+.contact-table tbody tr {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contact-table tbody tr td,
+.contact-table tbody tr th {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 300px;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
+  padding: 15px;
+}
+.contact-table tbody tr th {
+  text-align: left;
+  background-color: #fff45f;
+  color: #000;
+}
+.contact-table tbody tr th a {
+  text-decoration: none;
+  color: #000;
+}
+.control-panel {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.control-panel .search-input {
+  margin-right: 10px;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  font-size: 20px;
+}
+.ng-modal-overlay {
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+}
+.ng-modal-dialog {
+  z-index: 10000;
+  position: absolute;
+  width: 35%;
+  max-width: 400px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  -webkit-box-shadow: 4px 4px 80px #000;
+          box-shadow: 4px 4px 80px #000;
+}
+.ng-modal-dialog-content {
+  padding: 10px;
+  text-align: left;
+}
+.ng-modal-close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'arial', 'sans-serif';
+}
+.modalForm {
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.modalForm .input-field {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+}
+.modalForm .input-field input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #000;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 10px;
+  outline: none;
+}
+.modalForm .input-field label {
+  margin-right: 10px;
+}
+.modalForm .modalForm__btns {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.modalForm .modalForm__btns .btn {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 20px;
+  font-size: 15px;
+}
+.modalForm .modalForm__btns .btn:hover {
+  cursor: pointer;
+}
+.modalForm .modalForm__btns .addition-btn {
+  margin-right: 10px;
+}
