@@ -6,12 +6,6 @@ myApp.controller("firstCtrl", function($scope) {
     $scope.sortReverse  = false;
     $scope.searchContact   = ''; 
 
-    // Массив объектов контактов
-    // $scope.phonebook = [
-    //   {fullname: 'Медведев Денис Эдуардович', phone: '89226021880', email: 'medvedev@test.com'},
-    //   {fullname: 'Иванов Иван Иванович', phone: '6021880', email: 'ivanov@test.com'},
-    //   {fullname: 'Петров Петр Петрович', phone: '880', email: 'petrov@test.com'}
-    // ];
     $scope.getContactFromStorage = function(key, defaultValue) {
       var value = window.localStorage.getItem(key);
 
@@ -23,6 +17,10 @@ myApp.controller("firstCtrl", function($scope) {
 
       return false;
     };
+
+    $scope.cancelDefault = function($event) {
+      $event.preventDefault();
+    }
 
     $scope.saveContactToStorage = function(key, value) {
       var arr = $scope.getContactFromStorage(key, value) || [];
@@ -46,7 +44,6 @@ myApp.controller("firstCtrl", function($scope) {
         $scope.cleanModal(contact);
       } else {
         console.log('В каком то инпуте пусто!');
-        console.log($scope.getContactFromStorage('phonebook'));
       }
     };
 
