@@ -1,3 +1,10 @@
+// Объявление переменных
+dark-minimal-color = #000
+light-minimal-color = #fff
+table-title-color = #fff45f
+table-lines-color = #F5F5F5
+// Конец объявления перменных
+
 body
   font-family 'Oswald', sans-serif
 
@@ -12,18 +19,29 @@ body
   font-weight 700
   text-transform uppercase
   outline none
-  border 2px solid #000
-  background-color #fff
+  border 2px solid dark-minimal-color
+  background-color light-minimal-color
   &:hover,
   &:focus
-    background-color #000
-    color #fff
+    background-color dark-minimal-color
+    color light-minimal-color
     cursor pointer
 // Конец общего стиля кнопочек
 
-input::placeholder
-  color #000
+// Стили для панели с сёчбаром и кнопкой добавления
+.control-panel
+  display flex
+  .search-input
+    margin-right 10px
+    border none
+    border-bottom 2px solid dark-minimal-color
+    outline none
+    font-size 20px
+    &::placeholder
+      color dark-minimal-color
+// Конец стилей для панели с сёчбаром и кнопкой добавления
 
+// Стили для таблицы контактов
 .contact-table
   display flex
   margin-top 10px
@@ -31,7 +49,7 @@ input::placeholder
     display block
     width 100%
     tr:nth-of-type(even)
-      background-color #F5F5F5
+      background-color table-lines-color
     tr
       display flex
       td, th
@@ -39,22 +57,14 @@ input::placeholder
         padding 15px
       th
         text-align left
-        background-color #fff45f
-        color #000
+        background-color table-title-color
+        color dark-minimal-color
         a
           text-decoration none
-          color #000
+          color dark-minimal-color
+// Конец стилей для таблицы контактов
 
-.control-panel
-  display flex
-  .search-input
-    margin-right 10px
-    border none
-    border-bottom 2px solid #000
-    outline none
-    font-size 20px
-
-// Modal window
+// Стили для модального окна
 .ng-modal-overlay
   position absolute
   z-index 9999
@@ -62,7 +72,7 @@ input::placeholder
   left 0
   width 100%
   height 100%
-  background-color #000000
+  background-color dark-minimal-color
   opacity 0.8
 
 .ng-modal-dialog
@@ -73,8 +83,8 @@ input::placeholder
   top 50%
   left 50%
   transform translate(-50%, -50%)
-  background-color #fff
-  box-shadow 4px 4px 80px #000
+  background-color light-minimal-color
+  box-shadow 4px 4px 80px dark-minimal-color
 
 .ng-modal-dialog-content
   padding 10px
@@ -90,7 +100,9 @@ input::placeholder
   display inline-block
   font-weight bold
   font-family 'arial', 'sans-serif'
+// Конец стилей для модального окна
 
+// Стили для формы в модальном окне
 .modalForm
   padding 20px
   box-sizing border-box
@@ -100,7 +112,7 @@ input::placeholder
     margin-bottom 20px
     input
       box-sizing border-box
-      border 2px solid #000
+      border 2px solid dark-minimal-color
       height 40px
       font-size 20px
       padding-left 10px
@@ -118,3 +130,4 @@ input::placeholder
         cursor pointer
     .addition-btn
       margin-right 10px
+// Конец стилей для формы в модальном окне
