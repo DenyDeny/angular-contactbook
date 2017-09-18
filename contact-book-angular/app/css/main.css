@@ -22,16 +22,29 @@ body {
   color: #fff;
   cursor: pointer;
 }
-input::-webkit-input-placeholder {
+.control-panel {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.control-panel .search-input {
+  margin-right: 10px;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  font-size: 20px;
+}
+.control-panel .search-input::-webkit-input-placeholder {
   color: #000;
 }
-input::-moz-placeholder {
+.control-panel .search-input::-moz-placeholder {
   color: #000;
 }
-input:-ms-input-placeholder {
+.control-panel .search-input:-ms-input-placeholder {
   color: #000;
 }
-input::placeholder {
+.control-panel .search-input::placeholder {
   color: #000;
 }
 .contact-table {
@@ -70,19 +83,6 @@ input::placeholder {
 .contact-table tbody tr th a {
   text-decoration: none;
   color: #000;
-}
-.control-panel {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-.control-panel .search-input {
-  margin-right: 10px;
-  border: none;
-  border-bottom: 2px solid #000;
-  outline: none;
-  font-size: 20px;
 }
 .ng-modal-overlay {
   position: absolute;
